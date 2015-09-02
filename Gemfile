@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -38,5 +37,18 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :development do
+	# guard for automatically running tests on changes
+	gem 'guard', require: false
+	gem 'guard-bundler', require: false
+	gem 'guard-minitest', require: false
+	gem 'rb-fsevent', require: false
+end
+
+group :test do
+	gem 'minitest-reporters'
+	gem 'shoulda'
 end
 
