@@ -7,4 +7,7 @@ class Event < ActiveRecord::Base
 		message: "There is already an event scheduled there at that time.",
 		case_sensitive: false
 	}
+
+	has_many :movies
+	has_many :votes
 end

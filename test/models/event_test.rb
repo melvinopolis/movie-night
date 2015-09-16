@@ -31,8 +31,7 @@ class EventTest < ActiveSupport::TestCase
 		with_message('There is already an event scheduled there at that time.').
 		case_insensitive
 
-	# test "does not allow two events at the same time and place" do
-	# end
-
+	should have_many(:movies)
+	should have_many(:votes)
 
 end
