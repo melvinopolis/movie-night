@@ -34,4 +34,5 @@ class EventTest < ActiveSupport::TestCase
 	should have_many(:movies)
 	should have_many(:votes)
 
+
 end

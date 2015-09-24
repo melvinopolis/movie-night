@@ -8,6 +8,14 @@ class MovieTest < ActiveSupport::TestCase
   	should belong_to(:event)
   	should have_many(:votes)
 
+  	should validate_uniqueness_of(:title).
+  		scoped_to(:event_id).
+  		with_message('Already suggested for that event').
+  		case_insensitive
+
+  	should validate_presence_of(:event_id)
+	
+
 	# test 'requires a title' do
 	#   	@movie = Movie.new
 	#   	@movie.title = 'The Big Lebowski'
