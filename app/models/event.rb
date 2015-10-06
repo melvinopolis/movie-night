@@ -10,4 +10,8 @@ class Event < ActiveRecord::Base
 
 	has_many :movies
 	has_many :votes
+
+	def winning_movie
+		Vote.where(movie: movies).select(:movie_id).group(:movie_id).order('count(id) desc').first.movie
+	end
 end

@@ -10,4 +10,8 @@
 	<%= @event.occurs_at %>
 </p>
 
-<%= link_to 'Back', events_path %>
+<p>
+	<%= link_to 'Edit Event', edit_event_path(@event) %> | <%= link_to 'Delete Event', @event, method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } %>
+</p>
+
+<%= link_to 'Back to all Events', events_path %>
